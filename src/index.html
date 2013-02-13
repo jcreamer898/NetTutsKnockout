@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KnockoutJS Demo</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+	<ul data-bind="foreach: beers">
+		<li data-bind="text: name"></li>
+	</ul>
+
+	<!-- import("templates/list.html") -->
+
+	<script src="js/require-jquery.js" data-main="js/main"></script>
+</body>
+</html>

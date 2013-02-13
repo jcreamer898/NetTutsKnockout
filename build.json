@@ -1,0 +1,23 @@
+{
+    "anvil.cdnjs": {
+        "output": "src/js/vendor/",
+        "libs": {
+            "knockout": {
+                "version": "2.2.1",
+                "url": "http://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.1/knockout-min.js"
+            }
+        }
+    },
+    "httpPaths": {
+    	"/": "./lib"
+    },
+    "anvil.compass": {
+        "config_file": "compass.rb"
+    },
+    "anvil.testem": {
+	    "launch": "Chrome",
+	    "test_page": "spec/index.html",
+	    "framework": "mocha"
+	},
+	"dependencies": [ "anvil.testem", "anvil.cdnjs", "anvil.compass" ]
+}
