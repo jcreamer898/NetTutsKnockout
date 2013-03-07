@@ -8,13 +8,21 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-	<ul data-bind="foreach: beers">
+	<input type="text" name="search" placeholder="Search" data-bind="value: search" />
+	<ul data-bind="foreach: beerListFiltered">
 		<li data-bind="text: name"></li>
 	</ul>
 
 	<!-- import("templates/list.html") -->
 
-	<script src="js/require-jquery.js" data-main="js/main"></script>
+	<script src="js/require-jquery.js"></script>
+	<script>
+		require( [ "./js/common" ], function (common) {
+            //js/common sets the baseUrl to be js/ so
+            //can just ask for 'app/main1' here instead
+            //of 'js/app/main1'
+            require( [ "index" ] );
+        });
+	</script>
 </body>
 </html>
