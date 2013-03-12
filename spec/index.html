@@ -2,15 +2,15 @@
 <head>
     <meta charset="utf-8">
     <title>Mocha Tests</title>
-    <link rel="stylesheet" href="mocha.css" />
+    <link rel="stylesheet" href="mocha/mocha.css"  type="text/css"/>
 </head>
 <body>
     <div id="mocha"></div>
 
-    <script src="expect.js"></script>
-    <script src="mocha.js"></script>
+    <script src="mocha/expect.js"></script>
+    <script src="mocha/mocha.js"></script>
     <script src="/testem.js"></script>
-    <script src="sinon-1.5.2.js"></script>
+    <script src="mocha/sinon-1.5.2.js"></script>
 
 
     <script src="../lib/js/require-jquery.js"></script>
@@ -18,34 +18,14 @@
     <script>
         mocha.setup( "bdd" );
 
-        require.config({
-            paths: {
-                ko: "vendor/knockout-min",
-                postal: "vendor/postal",
-                underscore: "vendor/underscore-min"
-            },
-            shim: {
-                ko: {
-                    exports: "ko"
-                },
-                underscore: {
-                    exports: "_"
-                }
-            },
-            baseUrl: "/lib/js"
-        });
-
-        if ( !window.mocha ) {
-            require( [ "ko" ], function( ko ) {
-
+        require( [ "../lib/js/common" ], function() {
+            require( [
+                "./tests/baseViewModel.spec.js",
+                "./tests/resources.spec.js",
+                "./tests/indexViewModel.spec.js" ], function() {
+                mocha.run();
             });
-        }
-
-        require( [ 
-            "baseViewModel.spec.js",
-            "resources.spec.js" ], function() {
-            mocha.run();
-        });        
+        });
     </script>
 </body>
 </html>

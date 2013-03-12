@@ -5,14 +5,15 @@ define( [ "underscore", "models/baseViewModel", "ko" ], function( _, BaseViewMod
 		this.age = null;
 		this.colors = [];
 
-		BaseViewModel.call( this, options );
+		BaseViewModel.apply( this, arguments );
 	};
+
+	_.extend(TestModel.prototype, BaseViewModel.prototype );
 
 	TestModel.prototype.initialize = function() {
 		this.name( "foo" );
 	};
 
-	_.extend(TestModel.prototype, BaseViewModel.prototype );
 
 	describe( "testing the base view model", function() {
 		it ( "should add ko.observable to each property", function() {

@@ -5,6 +5,7 @@ define( [
     "models/beer",
     "models/baseViewModel",
     "shared/bus" ], function ( ko, _, postal, Beer, BaseViewModel, bus ) {
+
     var IndexViewModel = function() {
         this.beers = [];
         this.search = "";
@@ -15,8 +16,6 @@ define( [
     _.extend(IndexViewModel.prototype, BaseViewModel.prototype, {
         initialize: function() {
             this.setupSubscriptions();
-
-            // this.search.subscribe( _.bind( this.filterBeers, this ) );
 
             this.beerListFiltered = ko.computed( this.filterBeers, this );
 
@@ -29,7 +28,7 @@ define( [
 
         filterBeers: function() {
             var filter = this.search().toLowerCase();
-            
+
             if ( !filter ) {
                 return this.beers();
             }
@@ -48,7 +47,7 @@ define( [
 
         setupSubscriptions: function() {
             var self = this;
-            
+
             bus.data.subscribe( "beers.fetched", function( data ) {
                 self.parse.call( self, _.sortBy( data.beers, "name" ) );
             });
