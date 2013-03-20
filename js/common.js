@@ -16,5 +16,5 @@ require.config({
             exports: "amplify"
         }
     },
-    baseUrl: "/js"
+    baseUrl: "js/"
 });
