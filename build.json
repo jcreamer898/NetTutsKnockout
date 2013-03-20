@@ -9,7 +9,10 @@
         }
     },
     "httpPaths": {
-    	"/": "./lib"
+    	"/": "./lib",
+        "/spec": "./spec",
+        "/spec/js": "./lib/js",
+        "/spec/lib": "./lib"
     },
     "anvil.compass": {
         "config_file": "compass.rb"

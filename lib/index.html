@@ -8,21 +8,34 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<input type="text" name="search" placeholder="Search" data-bind="value: search" />
-	<ul data-bind="foreach: beerListFiltered">
-		<li data-bind="text: name"></li>
-	</ul>
+    <section id="main">
+        <section id="container">
+            <form class="search" data-bind="submit: doSearch">
+                <input type="text" name="search" placeholder="Search" data-bind="value: search, valueUpdate: 'afterkeydown'" />
+                <ul data-bind="foreach: beerListFiltered">
+                    <li data-bind="text: name, click: $parent.addToFavorites"></li>
+                </ul>
+            </form>
 
-	<!-- import("templates/list.html") -->
+            <aside id="favorites">
+                <h3>Favorites</h3>
+                <ul data-bind="foreach: favorites">
+                    <li data-bind="text: name, click: $parent.removeFromFavorites"></li>
+                </ul>
+            </aside>
+        </section>
+    </section>
 
-	<script src="js/require-jquery.js"></script>
-	<script>
-		require( [ "./js/common" ], function (common) {
+    <!-- import("templates/list.html") -->
+
+    <script src="js/require-jquery.js"></script>
+    <script>
+        require( [ "./js/common" ], function (common) {
             //js/common sets the baseUrl to be js/ so
             //can just ask for 'app/main1' here instead
             //of 'js/app/main1'
             require( [ "pages/index" ] );
         });
-	</script>
+    </script>
 </body>
 </html>

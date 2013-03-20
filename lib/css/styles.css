@@ -69,3 +69,20 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jonathan\/gitrepos\/Blogs\/NetTuts\/NetTutsKnockout\/\.anvil\/tmp\/sass\/styles\.scss}line{font-family:\000034}}
+body {
+  font-family: verdana;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jonathan\/gitrepos\/Blogs\/NetTuts\/NetTutsKnockout\/\.anvil\/tmp\/sass\/styles\.scss}line{font-family:\000036}}
+#main {
+  width: 50%;
+  margin: 0 auto;
+  font-size: .9em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jonathan\/gitrepos\/Blogs\/NetTuts\/NetTutsKnockout\/\.anvil\/tmp\/sass\/styles\.scss}line{font-family:\0000311}}
+#main .search, #main .favorites {
+  width: 50%;
+  float: left;
+}

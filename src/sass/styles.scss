@@ -1,2 +1,12 @@
 @import "print";
 @import "screen";
+
+body { font-family: verdana; }
+
+#main {
+    width: 50%;
+    margin: 0 auto;
+    font-size: .9em;
+
+    .search, .favorites { width: 50%; float: left; }
+}

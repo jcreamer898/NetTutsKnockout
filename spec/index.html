@@ -9,16 +9,15 @@
 
     <script src="mocha/expect.js"></script>
     <script src="mocha/mocha.js"></script>
-    <script src="/testem.js"></script>
     <script src="mocha/sinon-1.5.2.js"></script>
 
 
-    <script src="../lib/js/require-jquery.js"></script>
+    <script src="js/require-jquery.js"></script>
 
     <script>
         mocha.setup( "bdd" );
 
-        require( [ "../lib/js/common" ], function() {
+        require( [ "js/common" ], function() {
             require( [
                 "./tests/baseViewModel.spec.js",
                 "./tests/resources.spec.js",

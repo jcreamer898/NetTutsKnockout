@@ -39,5 +39,16 @@ define( [ "underscore", "viewModels/indexViewModel", "models/beer", "postal" ], 
 
             expect( this.viewModel.beers().length ).to.be( 3 );
         });
+
+        it( "should add new beers to favorites", function() {
+            expect( this.viewModel.favorites().length ).to.be( 0 );
+
+            this.viewModel.addToFavorites( new Beer({
+                name: "abita amber",
+                id: 3
+            }));
+
+            expect( this.viewModel.favorites().length ).to.be( 1 );
+        });
     });
 });
